@@ -2,7 +2,7 @@
 
 // set up ======================================================================
 // get all the tools we need
-var express  = require('./express');
+var express  = require('express');
 var path = require('path');
 var session  = require('express-session');
 var cookieParser = require('cookie-parser');
@@ -33,8 +33,9 @@ app.use(bodyParser.json());
 
 // app.use(express.static(path.join(__dirname, '../webapp')));
 
-app.use(express.static(path.join(__dirname,'../../app')));
-app.use(express.static('../app/views'));
+app.use(express.static(path.join(__dirname, '../app')));
+app.use('/profile', express.static(path.join(__dirname, '/app/views')));
+// app.use(express.static('../app/views'));
 // app.use(express.static(path.join(__dirname, '../test/webapp/angular/libs')));
 
 // required for passport
