@@ -1,0 +1,46 @@
+$iconSpritePath: "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+
+@import "bootstrap-sass/lib/bootstrap";
+
+//libs
+@import (inline) "../bower_components/bootstrap/dist/css/bootstrap.css";
+@import (inline) "../bower_components/bootstrap/dist/css/bootstrap-theme.min.css";
+@import (inline) "../bower_components/angular-ui-tree/dist/angular-ui-tree.min.css";
+@import (inline) "../bower_components/angular-ui-grid/ui-grid.css";
+@import (inline) "../bower_components/angular-bootstrap/ui-bootstrap-csp.css";
+@import (inline) "../bower_components/components-font-awesome/css/font-awesome.css";
+@import (inline) "../bower_components/angular-flash-alert/src/angular-flash.css";
+@import (inline) "../bower_components/angular-ui-select/dist/select.min.css";
+
+
+@import "custom.less";
+
+
+/* Put your CSS here */
+html, body {
+  margin: 20px;
+}
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
