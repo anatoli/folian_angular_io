@@ -9,6 +9,18 @@
     "es5-shim": "~2.0.8",
     "angular-cookies": "~1.0.7",
     "angular-ui-router": "*",
+    "express": "*",
+    "path": "*",
+    "express-session": "*",
+    "cookie-parser": "*",
+    "body-parser": "*",
+    "morgan": "*",
+    "passport": "*",
+    "connect-flash": "*",
+    "passport-local": "*",
+    "mysql": "*",
+    "bcrypt-nodejs": "*",
+
 
     "bootstrap": "latest",
     "requirejs-plugins": "~1.0.3",

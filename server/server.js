@@ -29,12 +29,15 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// app.set('view engine', 'ejs'); // set up ejs for templating
+// app.set('views', '../app/views');
+app.set('view engines', 'ejs');
+app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+app.use('/scripts',  express.static(__dirname + '/scripts'));
 
 // app.use(express.static(path.join(__dirname, '../webapp')));
 
-app.use(express.static(path.join(__dirname, '../app')));
-app.use('/profile', express.static(path.join(__dirname, '/app/views')));
+// app.use(express.static(path.join(__dirname, '../app')));
+// app.use('/profile', express.static(path.join(__dirname, '../app/views')));
 // app.use(express.static('../app/views'));
 // app.use(express.static(path.join(__dirname, '../test/webapp/angular/libs')));
 

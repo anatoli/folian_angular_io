@@ -1,4 +1,5 @@
 // app/routes.js
+var path = require('path');
 module.exports = function(app, passport) {
 
 
@@ -7,7 +8,7 @@ module.exports = function(app, passport) {
 	// HOME PAGE (with login links) ========
 	// =====================================
 	app.get('/', function(req, res) {
-		res.render('index.html'); // load the index.ejs file
+		res.render('index.ejs'); // load the index.ejs file
 		// res.redirect('/login');
 		// res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
 	});
@@ -19,8 +20,10 @@ module.exports = function(app, passport) {
 	app.get('/login', function(req, res) {
 
     // res.redirect('/main');
+
 		// render the page and pass in any flash data if it exists
-		res.render('index.html', { message: req.flash('loginMessage') });
+		// res.render('index.html', { message: req.flash('loginMessage') });
+		res.render('index.ejs', { message: req.flash('loginMessage') });
 	});
 
 	// process the login form
@@ -62,9 +65,10 @@ module.exports = function(app, passport) {
 	// we will want this protected so you have to be logged in to visit
 	// we will use route middleware to verify this (the isLoggedIn function)
 	app.get('/profile', isLoggedIn, function(req, res) {
-		res.render('index2.html', {
+		res.render('profile.ejs', {
 			user : req.user // get the user out of session and pass to template
 		});
+    // res.sendFile(path.join(__dirname+'/views/profile.html'),{user : req.user});
 	});
 
 	// =====================================
