@@ -58,17 +58,18 @@ module.exports = function(app, passport) {
 		failureRedirect : '/signup', // redirect back to the signup page if there is an error
 		failureFlash : true // allow flash messages
 	}));
-
+  app.set('views', path.join(__dirname, 'views'));
 	// =====================================
 	// PROFILE SECTION =========================
 	// =====================================
 	// we will want this protected so you have to be logged in to visit
 	// we will use route middleware to verify this (the isLoggedIn function)
 	app.get('/profile', isLoggedIn, function(req, res) {
-		res.render('profile.ejs', {
-			user : req.user // get the user out of session and pass to template
-		});
-    // res.sendFile(path.join(__dirname+'/views/profile.html'),{user : req.user});
+		// res.render('profile.ejs', {
+		// 	user : req.user // get the user out of session and pass to template
+		// });
+    console.log("Дир наме = " +__dirname)
+    res.sendFile(path.join(__dirname+'/views/profile.html'),{user : req.user});
 	});
 
 	// =====================================

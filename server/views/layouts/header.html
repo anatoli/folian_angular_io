@@ -1,0 +1,73 @@
+<div class="navbar navbar-default nav-bar-eis">
+
+
+    <div class="container-fluid nav-header pading-logo-eis">
+
+        <div class="row">
+            <div class="col-ms-1">
+                <a>
+                    <i class="fa fa-bars fa-2x toggle-btn header-logo" ng-click="openBar()"
+                       data-target="#menu-content"></i>
+                </a>
+            </div>
+            <div class="col-ms-1">
+                <a class="header-logo" href="#/">
+                    <img ng-src="images/logo.png" class="logo">
+                </a>
+            </div>
+            <div class="col-ms-10">
+                <div class="title-header">
+                    <span uib-tooltip="Дата сборки: {{$root.$session.version.created | date: 'dd.MM.yyyy HH:mm' : 'UTC'}}"
+                          tooltip-trigger="mouseenter"
+                          tooltip-placement="bottom">
+                    ЕИС Нотариат
+                        <sup>
+                            <small>{{$root.$session.version.version}}</small>
+                        </sup>
+                    </span>
+                    <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
+                    <!--<span class="sr-only">Toggle navigation</span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--</button>-->
+                    <div class="navbar-text pull-right toolbar-header">
+
+                        <form name="forumForm"
+                              id="forumForm"
+                              action="http://10.20.2.231/phpBB3/ucp.php?mode=login"
+                              method="post" target="_blank">
+                            <input type="hidden"
+                                   name="username"
+                                   id="username"
+                                   title="Username"
+                                   value="{{$root.$session.user.username}}" />
+                            <input type="hidden"
+                                   name="password"
+                                   id="password"
+                                   title="Password"
+                                   value="{{$root.$session.user.department.id}}" />
+                            <input type="submit"
+                                   name="login"
+                                   value="Форум"
+                                   uib-tooltip="Переход в форум"
+                                   tooltip-placement="bottom"/>
+                        </form>
+
+                        <span class="user-name">
+                             <b>{{$root.$session.user.name}}</b>
+                            <i class="fa fa-user fa-lg"></i>
+                        </span>
+
+                        <a href="#" ng-click="logout()" class="navbar-link">Выход <i
+                                class="glyphicon glyphicon-log-out"></i></a>&nbsp;
+                    </div>
+                </div>
+                <div ncy-breadcrumb class="breadcrumb-header"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
