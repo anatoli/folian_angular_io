@@ -33,26 +33,6 @@
                     <!--</button>-->
                     <div class="navbar-text pull-right toolbar-header">
 
-                        <form name="forumForm"
-                              id="forumForm"
-                              action="http://10.20.2.231/phpBB3/ucp.php?mode=login"
-                              method="post" target="_blank">
-                            <input type="hidden"
-                                   name="username"
-                                   id="username"
-                                   title="Username"
-                                   value="{{$root.$session.user.username}}" />
-                            <input type="hidden"
-                                   name="password"
-                                   id="password"
-                                   title="Password"
-                                   value="{{$root.$session.user.department.id}}" />
-                            <input type="submit"
-                                   name="login"
-                                   value="Форум"
-                                   uib-tooltip="Переход в форум"
-                                   tooltip-placement="bottom"/>
-                        </form>
 
                         <span class="user-name">
                              <b>{{$root.$session.user.name}}</b>

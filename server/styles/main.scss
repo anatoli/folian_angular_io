@@ -1,20 +1,20 @@
 $iconSpritePath: "../images/glyphicons-halflings.png";
 $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
-@import "bootstrap-sass/lib/bootstrap";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 //libs
-@import (inline) "../bower_components/bootstrap/dist/css/bootstrap.css";
-@import (inline) "../bower_components/bootstrap/dist/css/bootstrap-theme.min.css";
-@import (inline) "../bower_components/angular-ui-tree/dist/angular-ui-tree.min.css";
-@import (inline) "../bower_components/angular-ui-grid/ui-grid.css";
-@import (inline) "../bower_components/angular-bootstrap/ui-bootstrap-csp.css";
-@import (inline) "../bower_components/components-font-awesome/css/font-awesome.css";
-@import (inline) "../bower_components/angular-flash-alert/src/angular-flash.css";
-@import (inline) "../bower_components/angular-ui-select/dist/select.min.css";
+@import "../bower_components/bootstrap/dist/css/bootstrap.css";
+@import "../bower_components/bootstrap/dist/css/bootstrap-theme.min.css";
+@import "../bower_components/angular-ui-tree/dist/angular-ui-tree.min.css";
+@import "../bower_components/angular-ui-grid/ui-grid.css";
+@import "../bower_components/angular-bootstrap/ui-bootstrap-csp.css";
+@import "../bower_components/components-font-awesome/css/font-awesome.css";
+@import "../bower_components/angular-flash-alert/src/angular-flash.css";
+@import "../bower_components/angular-ui-select/dist/select.min.css";
 
 
-@import "custom.less";
+
 
 
 /* Put your CSS here */
@@ -23,7 +23,7 @@ html, body {
 }
 
 body {
-    background: #fafafa;
+    background: black;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
 }

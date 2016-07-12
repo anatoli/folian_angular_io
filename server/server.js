@@ -33,10 +33,11 @@ app.use(bodyParser.json());
 app.set('view engines', 'ejs');
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use('/scripts',  express.static(__dirname + '/scripts'));
+app.use('/styles',  express.static(__dirname + '/styles'));
 app.use('/server',  express.static(__dirname + '/server'));
 app.use('/views',  express.static(__dirname + '/views'));
 
-console.log("Дир наме = " + __dirname)
+
 
 
 
