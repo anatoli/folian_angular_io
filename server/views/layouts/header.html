@@ -1,53 +1,81 @@
-<div class="navbar navbar-default nav-bar-eis">
+<!--<div class="navbar navbar-default nav-bar-eis">-->
 
 
-    <div class="container-fluid nav-header pading-logo-eis">
+    <!--<div class="container-fluid nav-header pading-logo-eis">-->
 
-        <div class="row">
-            <div class="col-ms-1">
-                <a>
-                    <i class="fa fa-bars fa-2x toggle-btn header-logo" ng-click="openBar()"
-                       data-target="#menu-content"></i>
-                </a>
-            </div>
-            <div class="col-ms-1">
-                <a class="header-logo" href="#/">
-                    <img ng-src="images/logo.png" class="logo">
-                </a>
-            </div>
-            <div class="col-ms-10">
-                <div class="title-header">
-                    <span uib-tooltip="Дата сборки: {{$root.$session.version.created | date: 'dd.MM.yyyy HH:mm' : 'UTC'}}"
-                          tooltip-trigger="mouseenter"
-                          tooltip-placement="bottom">
-                    ЕИС Нотариат
-                        <sup>
-                            <small>{{$root.$session.version.version}}</small>
-                        </sup>
-                    </span>
-                    <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
-                    <!--<span class="sr-only">Toggle navigation</span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--</button>-->
-                    <div class="navbar-text pull-right toolbar-header">
+        <!--<div class="row">-->
+            <!--<div class="col-ms-1">-->
+                <!--<a>-->
+                    <!--<i class="fa fa-bars fa-2x toggle-btn header-logo" ng-click="openBar()"-->
+                       <!--data-target="#menu-content"></i>-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<div class="col-ms-1">-->
+                <!--<a class="header-logo" href="#/">-->
+                    <!--<img ng-src="images/logo.png" class="logo">-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<div class="col-ms-10">-->
+                <!--<div class="title-header">-->
+                    <!--<span uib-tooltip="Дата сборки: {{$root.$session.version.created | date: 'dd.MM.yyyy HH:mm' : 'UTC'}}"-->
+                          <!--tooltip-trigger="mouseenter"-->
+                          <!--tooltip-placement="bottom">-->
+                    <!--ЕИС Нотариат-->
+                        <!--<sup>-->
+                            <!--<small>{{$root.$session.version.version}}</small>-->
+                        <!--</sup>-->
+                    <!--</span>-->
+                    <!--&lt;!&ndash;<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<span class="sr-only">Toggle navigation</span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<span class="icon-bar"></span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<span class="icon-bar"></span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<span class="icon-bar"></span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                    <!--<div class="navbar-text pull-right toolbar-header">-->
 
 
-                        <span class="user-name">
-                             <b>{{$root.$session.user.name}}</b>
-                            <i class="fa fa-user fa-lg"></i>
-                        </span>
+                        <!--<span class="user-name">-->
+                             <!--<b>{{$root.$session.user.name}}</b>-->
+                            <!--<i class="fa fa-user fa-lg"></i>-->
+                        <!--</span>-->
 
-                        <a href="#" ng-click="logout()" class="navbar-link">Выход <i
-                                class="glyphicon glyphicon-log-out"></i></a>&nbsp;
-                    </div>
-                </div>
-                <div ncy-breadcrumb class="breadcrumb-header"></div>
-            </div>
-        </div>
+                        <!--<a href="#" ng-click="logout()" class="navbar-link">Выход <i-->
+                                <!--class="glyphicon glyphicon-log-out"></i></a>&nbsp;-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div ncy-breadcrumb class="breadcrumb-header"></div>-->
+            <!--</div>-->
+        <!--</div>-->
 
+    <!--</div>-->
+
+
+<!--</div>-->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Учёт заказов</a>
     </div>
-
-
-</div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon  glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Новых счетов: {{new_Payments}} </a></li>
+        <li><a href="#"><span class="glyphicon  glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Материалов на исходе: 81 </a></li>
+        <li ng-click="state()"><a href="#">{{user.name}} </a></li>
+        <!--                <li><a href="#">Dashboard</a></li>-->
+        <!--                <li><a href="#">Settings</a></li>-->
+        <!--                <li><a href="#">Profile</a></li>-->
+        <!--                <li><a href="#">Help</a></li>-->
+        <li><a href="/logout">Выйти</a></li>
+      </ul>
+      <!--            <form class="navbar-form navbar-right">-->
+      <!--                <input type="text" class="form-control" placeholder="Search...">-->
+      <!--            </form>-->
+    </div>
+  </div>
+</nav>

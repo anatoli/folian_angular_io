@@ -4,10 +4,14 @@
 'use strict';
 
 angular.module('folianApp')
-  .controller('HeaderCtrl', ['$scope', '$rootScope', "$http",
-    function ($scope, $rootScope, $http) {
+  .controller('HeaderCtrl', ['$scope', '$state', '$rootScope', "$http", 'User',
+    function ($scope, $state, $rootScope, $http, User) {
 
       var visible = false;
+
+      User.get(null, function (response) {
+          $scope.user = response.user;
+      })
 
       $scope.logout = function() {
         $http({
@@ -20,13 +24,15 @@ angular.module('folianApp')
           // called asynchronously if an error occurs
           // or server returns response with an error status.
         });
-        
-      };
-      $scope.openBar = function () {
-        visible = !visible;
-        $rootScope.$emit('rootScope:emit', visible);
-      };
 
+      };
+      // $scope.openBar = function () {
+      //   visible = !visible;
+      //   $rootScope.$emit('rootScope:emit', visible);
+      // };
+      $scope.state= function () {
+        $state.go('root.home')
+      }
 
 
 

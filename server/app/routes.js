@@ -68,8 +68,8 @@ module.exports = function(app, passport) {
 		// res.render('profile.ejs', {
 		// 	user : req.user // get the user out of session and pass to template
 		// });
-    console.log("Дир наме = " +__dirname)
     res.sendFile(path.join(__dirname+'/views/profile.html'),{user : req.user});
+
 	});
 
 	// =====================================
@@ -77,10 +77,16 @@ module.exports = function(app, passport) {
 	// =====================================
 	app.get('/logout', function(req, res) {
 		req.logout();
-    console.log('logout')
-		res.redirect('#/');
+		res.redirect('/#');
 	});
+
+  app.get('/api/User', function (req, res) {
+    res.send({user : req.user});
+  })
+
 };
+
+
 
 // route middleware to make sure
 function isLoggedIn(req, res, next) {

@@ -29,16 +29,29 @@
           // },
         }
       })
-      .state('main', {
-        url: '/main',
-        views:{
-          'root': {
-            templateUrl: 'views/main.html',
-            controller:'MainCtrl'
+      .state('root.home', {
+        url: '/profile/detail',
+        ncyBreadcrumb: {
+          label: "Главная",
+          skip: true
+        },
+        views: {
+          'container@': {
+            templateUrl: '/views/users.html',
+            controller:  'MainCtrl'
           }
         }
-
       })
+      // .state('main', {
+      //   url: '/main',
+      //   views:{
+      //     'root': {
+      //       templateUrl: 'views/users.html',
+      //       controller:'MainCtrl'
+      //     }
+      //   }
+
+      // })
       .state('profile', {
       url: '/profile',
       templateUrl: 'views/layouts/sidebar.html',
