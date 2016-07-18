@@ -8,7 +8,7 @@ module.exports = function(app, passport) {
 	// HOME PAGE (with login links) ========
 	// =====================================
 	app.get('/', function(req, res) {
-		res.render('index.ejs'); // load the index.ejs file
+		res.render('profile.ejs'); // load the index.ejs file
 		// res.redirect('/login');
 		// res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
 	});
@@ -23,7 +23,7 @@ module.exports = function(app, passport) {
 
 		// render the page and pass in any flash data if it exists
 		// res.render('index.html', { message: req.flash('loginMessage') });
-		res.render('index.ejs', { message: req.flash('loginMessage') });
+		// res.render('index.ejs', { message: req.flash('loginMessage') });
 	});
 
 	// process the login form
@@ -82,6 +82,24 @@ module.exports = function(app, passport) {
 
   app.get('/api/User', function (req, res) {
     res.send({user : req.user});
+  });
+  app.get('/api/login',  isLoggedIn, function (res,req) {
+    passport.authenticate('local-login', {
+          successRedirect : '/signup', // redirect to the secure profile section
+          failureRedirect : '/', // redirect back to the signup page if there is an error
+          failureFlash : true // allow flash messages
+        }),
+      function(req, res) {
+        res.send({response : true});
+        console.log("hello");
+
+        if (req.body.remember) {
+          req.session.cookie.maxAge = 1000 * 60 * 10;
+        } else {
+          req.session.cookie.expires = false;
+        }
+        // res.redirect('/');
+      };
   })
 
 };

@@ -10,10 +10,16 @@
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     //delete $httpProvider.defaults.headers.common['X-Requested-With'];
     console.log($locationProvider)
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/login');
     $stateProvider
-      .state('root',{
-        url: '',
+      .state('login',{
+        url: '/login',
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+
+      })
+        .state('root',{
+        url: '/office',
         views: {
           'header': {
             templateUrl: 'views/layouts/header.html',
@@ -30,7 +36,7 @@
         }
       })
       .state('root.home', {
-        url: '/profile/detail',
+        url: '/profile',
         ncyBreadcrumb: {
           label: "Главная",
           skip: true
@@ -52,11 +58,11 @@
       //   }
 
       // })
-      .state('profile', {
-      url: '/profile',
-      templateUrl: 'views/layouts/sidebar.html',
-      controller:'ProfileCtrl'
-    })
+    //   .state('profile', {
+    //   url: '/profile',
+    //   templateUrl: 'views/layouts/sidebar.html',
+    //   controller:'ProfileCtrl'
+    // })
   });
 
 

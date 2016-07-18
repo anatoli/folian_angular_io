@@ -24,26 +24,27 @@
 <script src="bower_components/es5-shim/es5-shim.js"></script>
 <script src="bower_components/json3/lib/json3.min.js"></script>
 <![endif]-->
-<div ui-view='root'></div>
+<!--<div ui-view='root'></div>-->
 <!-- Add your site or application content here -->
 
-<!--<div class="container-fluid nopadding new-width-eis">-->
+<div class="container-fluid nopadding new-width-eis">
   <header>
     <div ui-view="header"></div>
   </header>
+  <div class="row">
+    <div class="col-md-1 leftSide nopadding">
+      <div class="sidebar" ui-view="sidebar"></div>
+    </div>
 
-  <div class="col-md-1 leftSide nopadding">
-    <div class="sidebar" ui-view="sidebar"></div>
+    <div class="col-md-11 rightSide nopadding">
+
+      <div ui-view="container"></div>
   </div>
 
-  <div class="col-md-11 rightSide nopadding">
-
-    <div ui-view="container"></div>
-
 
   </div>
 
-
+</div>
 <!--</div>-->
 
 
@@ -73,6 +74,7 @@
 <script src="scripts/controllers/HeaderCtrl.js"></script>
 <script src="scripts/controllers/SidebarCtrl.js"></script>
 <script src="scripts/controllers/ProfileCtrl.js"></script>
+<script src="scripts/controllers/LoginCtrl.js"></script>
 <script src="scripts/services/folianCommon.js"></script>
 <script src="scripts/controllers\MainCtrl.js"></script>
 
