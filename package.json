@@ -40,7 +40,12 @@
     "mysql" : "*",
     "bcrypt-nodejs" : "*",
     "passport-local" : "*",
-    "module" : "*"
+    "module" : "*",
+    "path": "*",
+    "ejs" : "*"
+
+
+
   },
   "engines": {
     "node": ">=0.8.0"

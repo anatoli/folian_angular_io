@@ -6,8 +6,7 @@
 angular.module('folianApp')
   .controller('HeaderCtrl', ['$scope', '$state', '$rootScope', "$http", 'User',
     function ($scope, $state, $rootScope, $http, User) {
-
-      var visible = false;
+      
 
       User.get(null, function (response) {
           $scope.user = response.user;
@@ -31,7 +30,7 @@ angular.module('folianApp')
       //   $rootScope.$emit('rootScope:emit', visible);
       // };
       $scope.state= function () {
-        $state.go('root.home')
+        $state.go('root.login')
       }
 
 

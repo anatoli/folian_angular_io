@@ -1,4 +1,4 @@
-<!doctype html>
+<html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.scss">
+        <!-- build:css(.tmp) css/main.css -->
+        <link rel="stylesheet" href="../../styles/main.css">
         <!-- endbuild -->
 </head>
   <body ng-app="folianApp">
@@ -24,28 +24,31 @@
       <script src="bower_components/es5-shim/es5-shim.js"></script>
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
-    <div ui-view></div>
-    <!-- Add your site or application content here -->
 
-    <!--<div class="container-fluid nopadding new-width-eis">-->
-      <!--<header>-->
-        <!--<div ui-view="header"></div>-->
-      <!--</header>-->
-
-      <!--<div class="col-md-1 leftSide nopadding">-->
-        <!--<div class="sidebar" ui-view="sidebar"></div>-->
-      <!--</div>-->
-
-      <!--<div class="col-md-11 rightSide nopadding">-->
-
-        <!--<div ui-view="container"></div>-->
-
-        <!--<footer id="mainFooter" ui-view="footer"></footer>-->
-
-      <!--</div>-->
+    <div ui-view>
 
 
-    <!--</div>-->
+
+    <div class="container-fluid nopadding new-width-eis">
+      <header>
+        <div ui-view="header"></div>
+      </header>
+
+      <div class="col-md-1 leftSide nopadding">
+        <div class="sidebar" ui-view="sidebar"></div>
+      </div>
+
+      <div class="col-md-11 rightSide nopadding">
+
+        <div ui-view="container"></div>
+
+        <footer id="mainFooter" ui-view="footer"></footer>
+
+      </div>
+
+
+    </div>
+    </div>
 
 
 
@@ -72,10 +75,13 @@
 
       <script src="scripts/app.js"></script>
       <script src="scripts/controllers/MainCtrl.js"></script>
+      <script src="scripts/controllers/HeaderCtrl.js"></script>
+      <script src="scripts/controllers\HeaderCtrl.js"></script>
+      <script src="scripts/controllers/SidebarCtrl.js"></script>
       <script src="scripts/controllers/ProfileCtrl.js"></script>
       <script src="scripts/controllers/LoginCtrl.js"></script>
       <script src="scripts/services/folianCommon.js"></script>
-      <script src="scripts/controllers\MainCtrl.js"></script>
+      <!--<script src="scripts/controllers\MainCtrl.js"></script>-->
 
          <!--build:js scripts/plugins.js -->
         <!--<script src="../bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>-->

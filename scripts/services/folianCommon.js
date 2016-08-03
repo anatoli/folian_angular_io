@@ -15,17 +15,15 @@ resources
     return factory;
   }])
 
-    .factory('User', ['$resource', function ($resource) {
-      return $resource('/api/User', {
-        query: { method: 'GET', isArray: false },
-        // create: { method: 'POST', isArray: false },
+  .factory('User', ['$resource', function ($resource) {
+    return $resource('/api/User', {      
+      // create: { method: 'POST', isArray: false },
 
-      });
-    }])
+    });
+  }])
   .factory('Login', ['$resource', function ($resource) {
     return $resource('/api/login', {
-      query: {method: 'GET', isArray: false},
-      // create: { method: 'POST', isArray: false },
+      // create: { method: 'POST', isArray: false }
 
     })
   }]);

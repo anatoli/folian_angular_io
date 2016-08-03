@@ -5,37 +5,46 @@
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router'
+  'ui.router',
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $resourceProvider) {
     //delete $httpProvider.defaults.headers.common['X-Requested-With'];
     console.log($locationProvider)
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/login')
     $stateProvider
       .state('login',{
         url: '/login',
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
-
       })
-        .state('root',{
-        url: '/office',
+      .state('root',{
+        url: '',
+        abstract: true,
         views: {
           'header': {
             templateUrl: 'views/layouts/header.html',
             controller: 'HeaderCtrl'
           },
+          // 'footer':{
+          //   templateUrl: '/views/layouts/footer.html',
+          //   controller: 'FooterCtrl'
+          // },
           'sidebar':{
             templateUrl: 'views/layouts/sidebar.html',
             controller: 'SidebarCtrl'
-          },
-          // 'footer':{
-          //   templateUrl: 'views/footer.html',
-          //   controller: 'FooterCtrl'
-          // },
+          }
         }
       })
-      .state('root.home', {
+
+
+      .state('root.office',{
+        url: '/office',
+        templateUrl: 'views/index.html',
+        controller: 'ProfileCtrl'
+
+
+      })
+      .state('root.profile', {
         url: '/profile',
         ncyBreadcrumb: {
           label: "Главная",
