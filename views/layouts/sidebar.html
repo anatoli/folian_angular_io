@@ -1,22 +1,42 @@
-<div class="nav-side-menu nav-side-menu-eis min-sidebar">
-    <div class="menu-list ">
+<!--<div class="nav-side-menu nav-side-menu-eis min-sidebar">-->
+    <!--<div class="menu-list ">-->
 
-        <ul id="menu-content" class="menu-content collapse out">
+        <!--<ul id="menu-content" class="menu-content collapse out">-->
 
-            <!--<div ng-repeat="menu in $root.$session.menu track by $index">-->
-                <!--<li ng-click="openBarTab($index)" uib-tooltip="{{menu.value}}" tooltip-placement="right-->
-                <!--" tooltip-trigger="mouseenter">-->
-                    <!--<img class="sidebar-img" ng-src="images/landing_icon/side-{{menu.color}}.png">-->
-                <!--</li>-->
-            <!--</div>-->
-          <div>
-            <ul>
-              <li href="">
+            <!--&lt;!&ndash;<div ng-repeat="menu in $root.$session.menu track by $index">&ndash;&gt;-->
+                <!--&lt;!&ndash;<li ng-click="openBarTab($index)" uib-tooltip="{{menu.value}}" tooltip-placement="right&ndash;&gt;-->
+                <!--&lt;!&ndash;" tooltip-trigger="mouseenter">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<img class="sidebar-img" ng-src="images/landing_icon/side-{{menu.color}}.png">&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--<div>-->
+            <!--<ul>-->
+              <!--<li href="">-->
 
-              </li>
-            </ul>
-          </div>
+              <!--</li>-->
+            <!--</ul>-->
+          <!--</div>-->
 
-        </ul>
-    </div>
+        <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="sidebar">
+  <ul class="nav nav-sidebar">
+    <li><a href="/">Главная <span class="sr-only">(current)</span></a></li>
+    <li><a href="/user_new"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Добавить пользователя</a></li>
+    <li><a href="/user_list"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Пользователи</a></li>
+    <li><a href="/dealer_list"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Дилеры</a></li>
+  </ul>
+  <ul class="nav nav-sidebar">
+    <li><a href="/material_new"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Добавить материал</a></li>
+    <li><a href="/polotno"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Материалы - полотна</a></li>
+    <li><a href="/acessories"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Материалы - комплектующие</a></li>
+  </ul>
+  <ul class="nav nav-sidebar">
+    <li><a href="/order_list"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Счета</a></li>
+    <li><a href="/order_new_list"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Новые счета</a></li>
+  </ul>
+  <ul class="nav nav-sidebar">
+    <li><a href="/info"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Полезная информация</a></li>
+  </ul>
 </div>

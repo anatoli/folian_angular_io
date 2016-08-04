@@ -84,26 +84,35 @@ module.exports = function(app, passport) {
 	});
 
   app.get('/api/User', function (req, res) {
-
-
-    res.send({user : res.user});
+    res.json({user : res.user});
   });
 
-  app.get('/api/login',  passport.authenticate('local-login', {
-      successRedirect : '/office', // redirect to the secure profile section
-      failureRedirect : '/', // redirect back to the signup page if there is an error
-      failureFlash : true // allow flash messages
-  }),
-  function(req, res) {
-    console.log("hello");
+  app.get('/api/login', function(req, res, next) {
+    passport.authenticate('local-login', function(err, user, info) {
+      if (err) { return next(err); }
+      if (!user) { return res.redirect('/'); }
+      req.logIn(user, function(err) {
+        if (err) { return next(err); }
+        return res.redirect('/users/' + user.username);
+      });
+    })(req, res, next);
+  });
 
-    if (req.body.remember) {
-      req.session.cookie.maxAge = 1000 * 60 * 10;
-    } else {
-      req.session.cookie.expires = false;
-    }
-    res.redirect('/');
-  })
+  //   app.get('/api/login',  passport.authenticate('local-login', {
+  //     successRedirect : '/office', // redirect to the secure profile section
+  //     failureRedirect : '/', // redirect back to the signup page if there is an error
+  //     failureFlash : true // allow flash messages
+  // }),
+  // function(req, res) {
+  //   console.log("hello");
+  //
+  //   if (req.body.remember) {
+  //     req.session.cookie.maxAge = 1000 * 60 * 10;
+  //   } else {
+  //     req.session.cookie.expires = false;
+  //   }
+  //   res.redirect('/');
+  // })
 
 
 };
