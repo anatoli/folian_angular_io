@@ -1,0 +1,60 @@
+<h2 class="sub-header">Добавление материала</h2>
+<form method="POST" action="http://pro.folian.by/material_create" accept-charset="UTF-8"><input name="_token" type="hidden" value="NL1a1T2QVdoVJAJLoGcF8Hyyjf9QV21zI1ziqUKX">
+
+  <div class="input-group">
+    <span class="input-group-addon">Название</span>
+    <input type="text" name="name" class="form-control">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">Производитель</span>
+    <input type="text" name="vendor" class="form-control">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">Стоимость</span>
+    <input type="text" name="price" class="form-control">
+    <span class="input-group-addon">
+        <select name="price_measure" class="form-control input-sm">
+            <option value="погонный метр">погонный метр</option>
+            <option value="квадратный метр">квадратный метр</option>
+            <option value="штука">штука</option>
+        </select>
+    </span>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">Наличие</span>
+    <input type="text" name="count" class="form-control">
+    <span class="input-group-addon">
+        <select name="count_measure" class="form-control">
+            <option value="погонный метр">погонный метр</option>
+            <option value="квадратный метр">квадратный метр</option>
+            <option value="штука">штука</option>
+        </select>
+    </span>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">Опасный лимит</span>
+    <input type="text" name="prelimit" class="form-control">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">Примечание</span>
+    <textarea rows="4" cols="40" name="description"></textarea>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">Тип материала</span>
+    <span class="input-group-addon">
+        <select name="type" class="form-control">
+            <option value="polotno">полотно</option>
+            <option value="acessories">комплектующее</option>
+        </select>
+    </span>
+  </div>
+
+  <button type="submit" class="btn btn-default">Добавить</button>
+
+</form>

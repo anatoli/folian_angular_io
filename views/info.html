@@ -1,0 +1,149 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="post" action="/info_link_add" enctype="multipart/form-data" autocomplete="off">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="myModalLabel5">Добавление полезной ссылки</h4>
+        </div>
+        <div class="modal-body">
+          <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon5">Название</span>
+            <input type="text" class="form-control" placeholder="Название" aria-describedby="sizing-addon5" name="name">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon6">Файл</span>
+            <input type="file" placeholder="Файл" aria-describedby="sizing-addon6" name="link">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary">Добавить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="post" action="/info_price_add" enctype="multipart/form-data" autocomplete="off">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="myModalLabel">Добавление прайс-листа</h4>
+        </div>
+        <div class="modal-body">
+          <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2">Название</span>
+            <input type="text" class="form-control" placeholder="Название" aria-describedby="sizing-addon2" name="name">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon3">Файл</span>
+            <input type="file" placeholder="Файл" aria-describedby="sizing-addon3" name="price">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary">Добавить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="post" action="/info_news_add" enctype="multipart/form-data" autocomplete="off">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="myModalLabel2">Добавление новости</h4>
+        </div>
+        <div class="modal-body">
+          <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon7">Название</span>
+            <input type="text" class="form-control" placeholder="Название" aria-describedby="sizing-addon3" name="name">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon4">Содержание</span>
+            <textarea name="content" rows="5" cols="70"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary">Добавить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<h2 class="sub-header">Полезная информация</h2>
+<div class="row">
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">Полезные ссылки
+        <button type="submit" class="btn btn-default pull-right buttonHeader" data-toggle="modal" data-target="#myModal">Добавить</button>
+      </div>
+      <div class="panel-body">
+        <a href="/upload/1422472259.rar">Программа для построения <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span></a>
+        <a href="/info_link_delete/6"><span class="glyphicon glyphicon-floppy-remove del_link" rel="6" aria-hidden="true"></span></a>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">Прайс-листы
+        <button type="submit" class="btn btn-default pull-right buttonHeader" data-toggle="modal" data-target="#myModal2">Добавить</button>
+      </div>
+      <div class="panel-body">
+        <a href="/upload/1446639279.docx">Новый Прайс <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span></a>
+        <a href="/info_price_delete/7"><span class="glyphicon glyphicon-floppy-remove del_price" rel="7" aria-hidden="true"></span></a>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+  </div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Реквизиты ФолианСтрой <button type="submit" class="btn btn-default pull-right buttonHeader">Сохранить</button></div>
+      <div class="panel-body">
+        <form method="post" action="/info_info_save">
+          <textarea name="info" rows="5" cols="70" > </textarea>
+          <br>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Информация от компании
+        <button ng-if="!compamyStatus" type="submit" class="btn btn-default pull-right buttonHeader" data-toggle="modal" data-target="#myModal3">Добавить новость</button>
+      </div>
+      <div class="panel-body">
+        <form method="post" action="/info_news_save/5" name="company" id="company">
+          <div class="panel-heading"><input type="text" name="name" value="Скидки"></div>
+          <div class="panel-body">
+            <textarea name="content" rows="5" cols="80">Февраль месяц будут скидки на сатин белый по цене 2.3 уе!!!</textarea>
+            <br><button type="submit" class="btn btn-default">Сохранить</button>
+            <a href="/info_news_delete/5"><button type="button" class="btn btn-default">Удалить</button></a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>

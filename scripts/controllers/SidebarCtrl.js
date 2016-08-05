@@ -4,8 +4,8 @@
 'use strict';
 
 angular.module('folianApp')
-  .controller('SidebarCtrl', ['$scope', '$location', '$rootScope',
-    function ($scope, $location, $rootScope) {
+  .controller('SidebarCtrl', ['$scope', '$location', '$rootScope', '$state',
+    function ($scope, $location, $rootScope, $state) {
 
       function modalWindow() {
         var uibModal = $uibModal.open({
@@ -43,6 +43,10 @@ angular.module('folianApp')
       $scope.openBarTab = function (id) {
         $scope.side_id = id;
         modalWindow();
+      }
+
+      $scope.stateGo = function (data) {
+        $state.go(data)
       }
 
   }]);

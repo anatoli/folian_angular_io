@@ -37,23 +37,57 @@
       })
 
 
-      .state('root.office',{
-        url: '/office',
-        templateUrl: 'views/index.html',
-        controller: 'ProfileCtrl'
-
-
-      })
-      .state('root.profile', {
+      .state('root.profile',{
         url: '/profile',
         ncyBreadcrumb: {
-          label: "Главная",
+          label: "Добавить пользователя",
           skip: true
         },
         views: {
           'container@': {
-            templateUrl: '/views/users.html',
+            templateUrl: 'views/profile.html',
+            controller: 'ProfileCtrl'
+          }
+        }
+      })
+
+      .state('root.userAdd', {
+        url: '/usersAdd',
+        ncyBreadcrumb: {
+          label: "Добавить пользователя",
+          skip: true
+        },
+        views: {
+          'container@': {
+            templateUrl: '/views/userAdd.html',
             controller:  'MainCtrl'
+          }
+        }
+      })
+
+      .state('root.materialAdd', {
+        url: '/materialAdd',
+        ncyBreadcrumb: {
+          label: "Добавить новый материал",
+          skip: true
+        },
+        views: {
+          'container@': {
+            templateUrl: '/views/materialAdd.html',
+            controller:  'MaterialCtrl'
+          }
+        }
+      })
+      .state('root.info', {
+        url: '/info',
+        ncyBreadcrumb: {
+          label: "Полезная информация",
+          skip: true
+        },
+        views: {
+          'container@': {
+            templateUrl: '/views/info.html',
+            controller:  'InfoCtrl'
           }
         }
       })
