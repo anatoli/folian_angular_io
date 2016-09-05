@@ -13,6 +13,7 @@
 
         <!-- build:css(.tmp) css/main.css -->
         <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/ng-table/dist/ng-table.min.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -20,7 +21,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
         <!-- endbuild -->
@@ -31,8 +31,8 @@
     <![endif]-->
 
     <!--[if lt IE 9]>
-      <script src="bower_components/es5-shim/es5-shim.js"></script>
-      <script src="bower_components/json3/lib/json3.min.js"></script>
+      <script src="../bower_components/es5-shim/es5-shim.js"></script>
+      <script src="../bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
     <div ui-view>
@@ -73,8 +73,10 @@
        ga('send', 'pageview');
     </script>
 
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/angular/angular.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/ng-table/dist/ng-table.min.js"></script>
 
 
 
@@ -85,11 +87,15 @@
 
       <script src="../scripts/app.js"></script>
       <script src="../scripts/controllers/MainCtrl.js"></script>
+      <script src="../scripts/controllers/UsersCtrl.js"></script>
       <script src="../scripts/controllers/MaterialCtrl.js"></script>
       <script src="../scripts/controllers/InfoCtrl.js"></script>
       <script src="../scripts/controllers/HeaderCtrl.js"></script>
       <!--<script src="../scripts/controllers\HeaderCtrl.js"></script>-->
       <script src="../scripts/controllers/SidebarCtrl.js"></script>
+      <script src="../scripts/controllers/DealersCtrl.js"></script>
+      <script src="../scripts/controllers/AccessoriesCtrl.js"></script>
+      <script src="../scripts/controllers/PaintingsCtrl.js"></script>
       <script src="../scripts/controllers/ProfileCtrl.js"></script>
       <script src="../scripts/controllers/LoginCtrl.js"></script>
       <script src="../scripts/services/folianCommon.js"></script>

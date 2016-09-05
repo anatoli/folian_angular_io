@@ -24,13 +24,13 @@
   <ul class="nav nav-sidebar">
     <li><a href="/">Главная <span class="sr-only">(current)</span></a></li>
     <li ng-click="stateGo('root.userAdd')"><a href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Добавить пользователя</a></li>
-    <li><a href="/user_list"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Пользователи</a></li>
-    <li><a href="/dealer_list"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Дилеры</a></li>
+    <li ng-click="stateGo('root.users')"><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Пользователи</a></li>
+    <li ng-click="stateGo('root.dealers')"><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Дилеры</a></li>
   </ul>
   <ul class="nav nav-sidebar">
     <li ng-click="stateGo('root.materialAdd')"><a href=""><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Добавить материал</a></li>
-    <li><a href="/polotno"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Материалы - полотна</a></li>
-    <li><a href="/acessories"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Материалы - комплектующие</a></li>
+    <li  ng-click="stateGo('root.paintings')"><a href=""><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Материалы - полотна</a></li>
+    <li ng-click="stateGo('root.accessories')"><a href=""><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Материалы - комплектующие</a></li>
   </ul>
   <ul class="nav nav-sidebar">
     <li><a href="/order_list"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Счета</a></li>

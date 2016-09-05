@@ -6,6 +6,8 @@
   'ngResource',
   'ngSanitize',
   'ui.router',
+  'ngTable'
+
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $resourceProvider) {
     //delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -61,6 +63,61 @@
           'container@': {
             templateUrl: '/views/userAdd.html',
             controller:  'MainCtrl'
+          }
+        }
+      })
+      .state('root.users', {
+        url: '/users',
+        ncyBreadcrumb: {
+          label: "Пользователи",
+          skip: true
+        },
+        views: {
+          'container@': {
+            templateUrl: '/views/users.html',
+            controller:  'UsersCtrl'
+          }
+        }
+      })
+
+      .state('root.paintings', {
+        url: '/paintings',
+        ncyBreadcrumb: {
+          label: "Материалы-полотна",
+          skip: true
+        },
+        views: {
+          'container@': {
+            templateUrl: '/views/paintings.html',
+            controller:  'PaintingsCtrl'
+          }
+        }
+      })
+
+      .state('root.accessories', {
+        url: '/accessories',
+        ncyBreadcrumb: {
+          label: "Материалы-комплектующие",
+          skip: true
+        },
+        views: {
+          'container@': {
+            templateUrl: '/views/accessories.html',
+            controller:  'AccessoriesCtrl'
+          }
+        }
+      })
+
+      .state('root.dealers', {
+        url: '/dealers',
+        ncyBreadcrumb: {
+          label: "Дилеры",
+          skip: true
+        },
+        views: {
+          'container@': {
+            templateUrl: '/views/dealers.html',
+            controller:  'DealersCtrl'
           }
         }
       })

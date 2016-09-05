@@ -1,0 +1,63 @@
+<h2 class="sub-header">Список дилеров</h2>
+<div class="table-responsive">
+  <div ng-if="!noTableDataQ">
+    <table  class="table table-bordered table-striped table-condensed"
+            ng-table="tableParams" show-filter="true">
+      <tr ng-repeat="row in questionsList track by row.id"
+          ng-class="{tableItemSelected: (row.id === gridSelection.id)}">
+        <td data-title="'Номер'" filter="{title: 'text'}" sortable="'title'">
+          {{row.num}}
+        </td>
+        <td data-title="'ФИО'" filter="{level:'number'}" sortable="'level'" >
+          {{row.level}}
+        </td>
+        <td data-title="'e-mail'" class="center-block">
+
+        </td>
+        <td data-title="'Город'" class="center-block">
+
+        </td>
+        <td data-title="'Телефон'" class="center-block">
+
+        </td>
+        <td data-title="'Доступ'" class="center-block">
+
+        </td>
+        <td data-title="'Кол-во заказов'" class="center-block">
+
+        </td>
+        <td data-title="'Общая сумма'" class="center-block">
+
+        </td>
+        <td data-title="'Внесено денег'" class="center-block">
+
+        </td>
+
+      </tr>
+    </table>
+  </div>
+
+  <h2 ng-if="noTableDataQ"
+      class="text-center">
+    Список пуст
+  </h2>
+</div>
+
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Статистика
+        <button type="submit" class="btn btn-default pull-right buttonHeader" id="get_report">Скачать отчёт</button>
+      </div>
+
+      <div class="panel-body">
+        Общая сумма заказов: 2224.98$<br>
+        Общая сумма задолженности: 123452377.03$<br>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
