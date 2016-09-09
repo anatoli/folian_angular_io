@@ -63,12 +63,12 @@
           <h4 class="modal-title" id="myModalLabel2">Добавление новости</h4>
         </div>
         <div class="modal-body">
-          <div class="input-group">
-            <span class="input-group-addon" id="sizing-addon7">Название</span>
+
+            <label>Название</label>
             <input type="text" class="form-control" placeholder="Название" aria-describedby="sizing-addon3" name="name">
-          </div>
-          <div class="input-group">
-            <span class="input-group-addon" id="sizing-addon4">Содержание</span>
+
+          <div class="input-group" style="width:100%">
+            <label>Содержание</label>
             <textarea name="content" rows="5"  style="width:100%"></textarea>
           </div>
         </div>
@@ -128,11 +128,13 @@
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">Информация от компании
-        <button ng-if="!compamyStatus" type="submit" class="btn btn-default pull-right buttonHeader" data-toggle="modal" data-target="#myModal3">Добавить новость</button>
+        <button class="btn btn-default pull-right buttonHeader" data-toggle="modal" data-target="#myModal3">Добавить новость</button>
       </div>
       <div class="panel-body">
         <form method="post" action="/info_news_save/5" name="company" id="company">
-          <div class="panel-heading"><input type="text" name="name" value="Скидки"></div>
+          <div class=" panel-heading">
+            <input class="form-control" type="text" name="name" value="Скидки">
+          </div>
           <div class="panel-body">
             <textarea name="content" rows="5" style="width:100%">Февраль месяц будут скидки на сатин белый по цене 2.3 уе!!!</textarea>
             <br><button type="submit" class="btn btn-default">Сохранить</button>

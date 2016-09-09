@@ -6,7 +6,7 @@
 angular.module('folianApp')
   .controller('InfoCtrl', ['$scope', '$state', '$rootScope', "$http",
     function ($scope, $state, $rootScope, $http) {
-console.log($scope)
+
       $scope.$watch('company.$pristine' , function () {
         $scope.compamyStatus = $scope.company.$pristine
       })

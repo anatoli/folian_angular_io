@@ -6,10 +6,14 @@
 angular.module('folianApp')
   .controller('HeaderCtrl', ['$scope', '$state', '$rootScope', "$http", 'User',
     function ($scope, $state, $rootScope, $http, User) {
-      
+
 
       User.get(null, function (response) {
           $scope.user = response.user;
+        console.log("data proshla")
+        console.log(response);
+      }, function (err) {
+        console.log(err +"data ne proshla")
       })
 
       $scope.logout = function() {

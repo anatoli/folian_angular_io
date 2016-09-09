@@ -16,9 +16,7 @@ resources
   }])
 
   .factory('User', ['$resource', function ($resource) {
-    return $resource('/api/User', {
-      // create: { method: 'POST', isArray: false },
-    });
+    return $resource('/api/User');
   }])
   .factory('Login', ['$resource', function ($resource) {
     return $resource('/api/login', {
