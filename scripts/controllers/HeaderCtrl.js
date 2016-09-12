@@ -8,8 +8,8 @@ angular.module('folianApp')
     function ($scope, $state, $rootScope, $http, User) {
 
 
-      User.get(null, function (response) {
-          $scope.user = response.user;
+      User.query(null, function (response) {
+        $scope.user = response.user;
         console.log("data proshla")
         console.log(response);
       }, function (err) {

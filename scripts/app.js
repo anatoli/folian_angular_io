@@ -6,6 +6,7 @@
   'ngResource',
   'ngSanitize',
   'ui.router',
+  'ui.grid',
   'ngTable'
 
 ])

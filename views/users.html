@@ -1,1 +1,11 @@
 <h4> Тут будут таблицы пользователей</h4>
+<table ng-table="tableParams" class="table" show-filter="true">
+  <tr ng-repeat="user in users track by user.id">
+    <td title="'ID'" filter="{id:'text'}" sortable="'id'">
+      {{user.id}}</td>
+    <td title="'Name'" filter="{name:'text'}" sortable="'name'">
+      {{user.name}}</td>
+    <td title="'Age'" filter="{age:'number'}" sortable="'age'">
+      {{user.age}}</td>
+  </tr>
+</table>

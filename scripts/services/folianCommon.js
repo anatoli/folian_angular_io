@@ -16,7 +16,9 @@ resources
   }])
 
   .factory('User', ['$resource', function ($resource) {
-    return $resource('/api/User');
+    return $resource('/api/User',{
+      query : { method:'GET', params:{}, isArray:true}
+    });
   }])
   .factory('Login', ['$resource', function ($resource) {
     return $resource('/api/login', {

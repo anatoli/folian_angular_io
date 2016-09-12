@@ -1,7 +1,9 @@
 // app/routes.js
 var path = require('path');
 var dbconfig = require('../config/database');
+var fs = require('fs');
 var mysql = require('mysql');
+var mysqlModel = require('mysql-model');
 var EventEmitter = require('events').EventEmitter;
 var connection = mysql.createConnection(dbconfig.connection);
 module.exports = function(app, passport) {
@@ -46,32 +48,21 @@ module.exports = function(app, passport) {
 		req.logout();
 		res.redirect('/');
 	});
+
   app.get('/api/User', function (req, res) {
-    var username = 'user4'
-    var arr = {}
-    connection.query("SELECT * FROM users", function(err, rows){
-      console.log(rows);
-      if (err)
-        console.log('жОПА мИРА')
-      console.log("Errorororooror")
-      return err;
+    var arr = {};
+    connection.query("SELECT * FROM users", function (err, rows) {
+      if (err) {
+        console.log("Errorororooror")
+        return err;
+      }
       if (!rows.length) {
         return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
       }
-
-      // return done(null, rows);
-      arr = rows;
+      res.send(rows);
     });
-
-    console.log(username);
-
-    // console.log(sch);
-    console.log("Arr");
-    res.send(arr);
-    // res.end(sch);
-    // res.end(JSON.stringify(sch));
-
   });
+
 
   app.get('/api/login', function(req, res, next) {
     passport.authenticate('local-login', function(err, user, info) {

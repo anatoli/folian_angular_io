@@ -1,7 +1,10 @@
 {
   "name": "folian",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "mysql-model": "0.0.2"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.2.0",
@@ -30,22 +33,19 @@
     "load-grunt-tasks": "~0.1.0",
     "phantomjs-prebuilt": "^2.1.7",
     "time-grunt": "~0.1.0",
-    "express" : "*",
-    "express-session" : "*",
-    "cookie-parser" : "*",
-    "body-parser" : "*",
-    "morgan" : "*",
-    "passport" : "*",
-    "connect-flash" : "*",
-    "mysql" : "*",
-    "bcrypt-nodejs" : "*",
-    "passport-local" : "*",
-    "module" : "*",
+    "express": "*",
+    "express-session": "*",
+    "cookie-parser": "*",
+    "body-parser": "*",
+    "morgan": "*",
+    "passport": "*",
+    "connect-flash": "*",
+    "mysql": "*",
+    "bcrypt-nodejs": "*",
+    "passport-local": "*",
+    "module": "*",
     "path": "*",
-    "ejs" : "*"
-
-
-
+    "ejs": "*"
   },
   "engines": {
     "node": ">=0.8.0"
