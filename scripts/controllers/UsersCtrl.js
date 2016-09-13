@@ -11,18 +11,25 @@ angular.module('folianApp')
     'NgTableParams',
     function ($scope, $location, $rootScope, $state, User, NgTableParams) {
 
+      // $scope.visible =false;
 
 
       var self = this;
       self.tableParams = new NgTableParams(
-        { count: 5 },
-        { counts: [5, 10, 20]},
         {dataset:
           User.query(
             null,
             function (response) {
               $scope.users = response;
               console.log("data proshla") ;
+              if ($scope.users){
+                $scope.visibleData =true;
+                $scope.visibleNodata =false;
+
+              }else{
+                $scope.visibleNodata =true;
+                $scope.visibleData =false;
+              }
               },
             function (err) {
               console.log(err +"data ne proshla")

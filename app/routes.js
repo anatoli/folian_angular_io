@@ -2,17 +2,18 @@
 var path = require('path');
 var dbconfig = require('../config/database');
 var fs = require('fs');
+var passport = require('passport');
 var mysql = require('mysql');
 var mysqlModel = require('mysql-model');
 var EventEmitter = require('events').EventEmitter;
 var connection = mysql.createConnection(dbconfig.connection);
 module.exports = function(app, passport) {
 
-  setInterval(function () {
-
-    connection.query('SELECT 1');
-    // console.log(c++);
-  }, 5000);
+  // setInterval(function () {
+  //
+  //   connection.query('SELECT 1');
+  //   // console.log(c++);
+  // }, 5000);
 
 
 
@@ -49,6 +50,7 @@ module.exports = function(app, passport) {
 		res.redirect('/');
 	});
 
+
   app.get('/api/User', function (req, res) {
     var arr = {};
     connection.query("SELECT * FROM users", function (err, rows) {
@@ -70,7 +72,8 @@ module.exports = function(app, passport) {
       if (!user) { return res.redirect('/'); }
       req.logIn(user, function(err) {
         if (err) { return next(err); }
-        return res.redirect('/users/' + user.username);
+          res.send(user);
+        // return res.redirect('/users/' + user.username);
       });
     })(req, res, next);
   });

@@ -12,7 +12,7 @@ angular.module('folianApp')
         Login.get(null,{user:$scope.login, password: $scope.password}, function (response) {
           if(response){
             console.log(response);
-            $state.go('root.profile');
+            // $state.go('root.profile');
           }
         })
 
