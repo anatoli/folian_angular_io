@@ -7,12 +7,12 @@
       <td title="'Name'" filter="{name:'text'}" sortable="'name'">
         {{user.name}}</td>
       <td title="'Age'" filter="{age:'number'}" sortable="'age'">
-        {{user.age}}</td>
+        {{user.email}}</td>
     </tr>
   </table>
 </div>
 
-<div ng-if="visibleNodata" class="row">
+<div ng-if="!visible" class="row">
   <div class="col-xs-offset-5 col-md-offset-5 ol-lg-offset-5">
     <h1 >Данные отсутствуют</h1>
   </div>

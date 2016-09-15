@@ -9,6 +9,8 @@
   'ui.grid',
   'ngTable'
 
+
+
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $resourceProvider) {
     //delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -41,7 +43,7 @@
 
 
       .state('root.profile',{
-        url: '/profile',
+        url: '/profile/:name',
         ncyBreadcrumb: {
           label: "Добавить пользователя",
           skip: true
@@ -54,7 +56,7 @@
         }
       })
 
-      .state('root.userAdd', {
+      .state('root.profile.userAdd', {
         url: '/usersAdd',
         ncyBreadcrumb: {
           label: "Добавить пользователя",
@@ -67,7 +69,7 @@
           }
         }
       })
-      .state('root.users', {
+      .state('root.profile.users', {
         url: '/users',
         ncyBreadcrumb: {
           label: "Пользователи",

@@ -9,11 +9,11 @@ var EventEmitter = require('events').EventEmitter;
 var connection = mysql.createConnection(dbconfig.connection);
 module.exports = function(app, passport) {
 
-  // setInterval(function () {
-  //
-  //   connection.query('SELECT 1');
-  //   // console.log(c++);
-  // }, 5000);
+  setInterval(function () {
+
+    connection.query('SELECT 1');
+    // console.log(c++);
+  }, 5000);
 
 
 
@@ -39,7 +39,7 @@ module.exports = function(app, passport) {
 
 	// process the signup form
 	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect : '/profile', // redirect to the secure profile section
+		successRedirect : '/profile/', // redirect to the secure profile section
 		failureRedirect : '/signup', // redirect back to the signup page if there is an error
 		failureFlash : true // allow flash messages
 	}));
@@ -67,12 +67,14 @@ module.exports = function(app, passport) {
 
 
   app.get('/api/login', function(req, res, next) {
+    console.log('res')
     passport.authenticate('local-login', function(err, user, info) {
       if (err) { return next(err); }
       if (!user) { return res.redirect('/'); }
       req.logIn(user, function(err) {
         if (err) { return next(err); }
           res.send(user);
+        console.log('res')
         // return res.redirect('/users/' + user.username);
       });
     })(req, res, next);

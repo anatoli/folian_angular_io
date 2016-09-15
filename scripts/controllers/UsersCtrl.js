@@ -23,12 +23,10 @@ angular.module('folianApp')
               $scope.users = response;
               console.log("data proshla") ;
               if ($scope.users){
-                $scope.visibleData =true;
-                $scope.visibleNodata =false;
+                $scope.visible=true;
 
               }else{
-                $scope.visibleNodata =true;
-                $scope.visibleData =false;
+                $scope.visible=false;
               }
               },
             function (err) {

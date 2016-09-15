@@ -9,15 +9,19 @@ var bcrypt = require('bcrypt-nodejs');
 var dbconfig = require('./database');
 var connection = mysql.createConnection(dbconfig.connection);
 
+// require('./config/passport')(passport); // pass passport for configuration
+
 var c=0;
+
+
+// connection.query('USE ' + dbconfig.database);
 
 setInterval(function () {
 
-    connection.query('SELECT 1');
-    // console.log(c++);
+  connection.query('SELECT 1');
+  console.log(c++);
 }, 5000);
 
-connection.query('USE ' + dbconfig.database);
 // expose this function to our app using module.exports
 module.exports = function(passport) {
 
