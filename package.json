@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "fs": "0.0.1-security",
-    "mysql-model": "0.0.2"
+    "mysql-model": "0.0.2",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

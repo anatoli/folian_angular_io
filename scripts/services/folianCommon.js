@@ -21,7 +21,7 @@ resources
     });
   }])
   .factory('Login', ['$resource', function ($resource) {
-    return $resource('/api/login', {
-      // create: { method: 'POST', isArray: false }
-    })
+    return $resource('/api/login', {login:'@login'}/*, {
+      get: { method: 'POST', isArray: true }
+    }*/)
   }]);

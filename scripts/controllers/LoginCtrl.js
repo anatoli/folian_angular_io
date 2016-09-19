@@ -9,7 +9,7 @@ angular.module('folianApp')
 
       var visible = false;
       $scope.loginGet = function () {
-        Login.get(null,{user:$scope.login, password: $scope.password}, function (response) {
+        Login.get({user: $scope.login, password: $scope.password}, function (response) {
           if(response){
             console.log(response);
             // $state.go('root.profile');
