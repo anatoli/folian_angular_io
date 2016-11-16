@@ -20,6 +20,11 @@ resources
       query : { method:'GET', params:{}, isArray:true}
     });
   }])
+  .factory('Material', ['$resource', function ($resource) {
+    return $resource('/api/Material',{
+      query : { method:'GET', params:{}, isArray:true}
+    });
+  }])
   .factory('Login', ['$resource', function ($resource) {
     return $resource('/api/login', {login:'@login'}/*, {
       get: { method: 'POST', isArray: true }

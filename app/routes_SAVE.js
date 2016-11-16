@@ -10,13 +10,14 @@ var connection = mysql.createConnection(dbconfig.connection);
 module.exports = function(app, passport) {
 
 
-  connection.query('USE ' + dbconfig.database, function (err, rows) {
-    if(err){
-      console.log(err);
-    }else{
-      console.log(rows + "Alloha wse proshlo Norm");
-    }
-  });
+  // connection.query('USE' + dbconfig.database, function (err, rows) {
+  //   if(err){
+  //     console.log(err);
+  //   }else{
+  //     console.log("Alloha wse proshlo Norm");
+  //   }
+  // });
+
   app.on('error', function (err, row) {
     console.log(err);
   })
@@ -24,6 +25,7 @@ module.exports = function(app, passport) {
   // HOME PAGE (with login links) ========
   // =====================================
   app.get('/', function(req, res) {
+
     res.render('profile.ejs'); // load the index.ejs file
     // res.redirect('/login');
     // res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
@@ -97,16 +99,26 @@ module.exports = function(app, passport) {
   });
 
   app.get('/api/User', function (req, res) {
-    console.log(req)
-
-
-    var username = 'user4'
-    var sch = userQwery(null, username, '123')
-    console.log(username);
-    console.log(sch);
-    res.send(sch);
-    res.end(sch);
-
+    connection.query('SELECT * FROM users', function (err, rows) {
+      if(!err) {
+        res.json(rows);
+      }else{
+        res.json({"code" : 500, "status" : "Server Error"});
+        res.send({"code" : 500, "status" : "Server Error"})
+        return;
+      }
+    })
+  });
+  app.get('/api/Material', function (req, res) {
+    connection.query('SELECT * FROM materials', function (err, rows) {
+      if(!err) {
+        res.json(rows);
+      }else{
+        res.json({"code" : 500, "status" : "Server Error"});
+        res.send({"code" : 500, "status" : "Server Error"})
+        return;
+      }
+    })
   });
 
   app.get('/api/login', function(req, res, next) {
@@ -139,18 +151,6 @@ module.exports = function(app, passport) {
 
 };
 
-function userQwery(req, username, password, done) { // callback with email and password from our form
-  connection.query("SELECT id FROM users", function(err, rows){
-    if (err)
-      console.log(err)
-    return done(err);
-    if (!rows.length) {
-      return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
-    }
-
-    return done(null, rows);
-  });
-}
 
 
 // route middleware to make sure

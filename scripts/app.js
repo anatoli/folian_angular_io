@@ -56,7 +56,7 @@
         }
       })
 
-      .state('root.profile.userAdd', {
+      .state('root.userAdd', {
         url: '/usersAdd',
         ncyBreadcrumb: {
           label: "Добавить пользователя",
@@ -69,7 +69,7 @@
           }
         }
       })
-      .state('root.profile.users', {
+      .state('root.users', {
         url: '/users',
         ncyBreadcrumb: {
           label: "Пользователи",

@@ -17,13 +17,13 @@ module.exports = function(app, passport) {
 
 
 
-  connection.query('USE ' + dbconfig.database, function (err, rows) {
-    if(err){
-      console.log(err);
-    }else{
-      console.log(rows + "Alloha wse proshlo Norm");
-    }
-  });
+  // connection.query('USE ' + dbconfig.database, function (err, rows) {
+  //   if(err){
+  //     console.log(err);
+  //   }else{
+  //     console.log(rows + "Alloha wse proshlo Norm");
+  //   }
+  // });
   app.on('error', function (err, row) {
     // console.log(err);
   })

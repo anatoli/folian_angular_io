@@ -1,1 +1,19 @@
-<h4>paintings</h4>
+<h2>Материалы</h2>
+<div class="row">
+  <table ng-if="visible" ng-table="tableParams" class="table" show-filter="true">
+    <tr ng-repeat="material in materials">
+      <td title="'ID'" filter="{id:'text'}" sortable="'id'">
+        {{material.NAME}}</td>
+      <td title="'Name'" filter="{name:'text'}" sortable="'name'">
+        {{material.PRICE}}</td>
+      <td title="'Age'" filter="{age:'number'}" sortable="'age'">
+        {{material.TYPE}}</td>
+    </tr>
+  </table>
+</div>
+
+<div ng-if="!visible" class="row">
+  <div class="col-xs-offset-5 col-md-offset-5 ol-lg-offset-5">
+    <h1 >Данные отсутствуют</h1>
+  </div>
+</div>
