@@ -10,43 +10,52 @@
 'use strict';
 
 angular.module('folianApp')
-  .controller('DealersCtrl', ['$scope', '$location', '$rootScope', '$state', 'NgTableParams',
-    function ($scope, $location, $rootScope, $state, NgTableParams) {
-      $scope.noTableData = true;
-      $scope.noTableDataQ = true;
+  .controller('DealersCtrl', ['$scope', '$location', '$rootScope', '$state', 'NgTableParams', 'Dealers',
+    function ($scope, $location, $rootScope, $state, NgTableParams, Dealers) {
+      var self = this;
+      self.tableParams = new NgTableParams(
+        {dataset:
+          Dealers.query(
+            null,
+            function (response) {
+              $scope.dealers = response;
+              if ($scope.dealers){
+                $scope.visible=true;
 
-      var _defaultFilter = {
-        //from: getFromDate(),
-        //to: null,
-        status: 'n',
-        sort: 'created,id',
-        dir: 'desc,desc',
-        start: 0,
-        count: 10
-      };
-
-      $scope.showreg = false;
-      $scope.noTableData = false;
-      $scope.filter = angular.extend(angular.copy(_defaultFilter));
-      //$scope.filter = angular.copy(_defaultFilter);
-
-      $scope.gridSelection = null;
-      $scope.gridSelected = false;
-
-      function reloadGrid(clearSelected){
-        if(clearSelected){
-          $scope.gridSelection = null;
-          $scope.gridSelected = false;
+              }else{
+                $scope.visible=false;
+              }
+            },
+            function (err) {
+              console.log(err +"data ne proshla")
+            }
+          )
         }
-        $scope.configTableParams.reload();
+      );
+
+      self.selectedPageSizes = self.tableParams.settings().counts;
+      self.availablePageSizes = [5, 10, 15, 20, 25, 30, 40, 50, 100];
+      self.changePage = changePage;
+      self.changePageSize = changePageSize;
+      self.changePageSizes = changePageSizes;
+
+      function changePage(nextPage){
+        self.tableParams.page(nextPage);
       }
 
-      $scope.selectTableItem = function(item) {
-        // console.log("Selected CASE");
-        // console.log(item);
-        $scope.gridSelection = item;
-        $scope.gridSelected = true;
-      };
+      function changePageSize(newSize){
+        self.tableParams.count(newSize);
+      }
+
+      function changePageSizes(newSizes){
+        // ensure that the current page size is one of the options
+        if (newSizes.indexOf(self.tableParams.count()) === -1) {
+          newSizes.push(self.tableParams.count());
+          newSizes.sort();
+        }
+        self.tableParams.settings({ counts: newSizes});
+      }
+
 
 
     }]);

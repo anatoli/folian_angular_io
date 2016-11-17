@@ -109,10 +109,48 @@ module.exports = function(app, passport) {
       }
     })
   });
-  app.get('/api/Material', function (req, res) {
-    connection.query('SELECT * FROM materials', function (err, rows) {
+  app.get('/api/Dealers', function (req, res) {
+    connection.query('SELECT * FROM users WHERE ROLE LIKE "dealer" ', function (err, rows) {
       if(!err) {
         res.json(rows);
+      }else{
+        res.json({"code" : 500, "status" : "Server Error"});
+        res.send({"code" : 500, "status" : "Server Error"})
+        return;
+      }
+    })
+  });
+  app.get('/api/MaterialPolotno', function (req, res) {
+    connection.query('SELECT * FROM materials WHERE TYPE LIKE "polotno"', function (err, rows) {
+      if(!err) {
+        res.json(rows);
+      }else{
+        res.json({"code" : 500, "status" : "Server Error"});
+        res.send({"code" : 500, "status" : "Server Error"})
+        return;
+      }
+    })
+  });
+  app.get('/api/MaterialAcessories', function (req, res) {
+    connection.query('SELECT * FROM materials WHERE TYPE LIKE "acessories"', function (err, rows) {
+      if(!err) {
+        res.json(rows);
+        res.end;
+      }else{
+        res.json({"code" : 500, "status" : "Server Error"});
+        res.send({"code" : 500, "status" : "Server Error"})
+        return;
+      }
+    })
+  });
+
+  app.post('/api/MaterialAcessories', function (req, res) {
+
+    connection.query('INSERT INTO materials SET name="'+req.name+'",vendor="'+req.vendor+'", type="'+req.type+'", ', function (err, rows) {
+      if(!err) {
+        console.log('note error')
+        res.json({"code" : 200, "status" : "Success"});
+        res.send({"code" : 200, "status" : "Success"});
       }else{
         res.json({"code" : 500, "status" : "Server Error"});
         res.send({"code" : 500, "status" : "Server Error"})

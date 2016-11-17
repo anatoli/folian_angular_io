@@ -1,1 +1,20 @@
-<h4>Accessories</h4>
+
+<h2>Материалы - комплектующие</h2>
+<div class="row">
+  <table ng-if="visible" ng-table="tableParams" class="table" show-filter="true">
+    <tr ng-repeat="acessory in acessories">
+      <td title="'ID'" filter="{id:'text'}" sortable="'id'">
+        {{acessory.NAME}}</td>
+      <td title="'Name'" filter="{name:'text'}" sortable="'name'">
+        {{acessory.PRICE}}</td>
+      <td title="'Age'" filter="{age:'number'}" sortable="'age'">
+        {{acessory.TYPE}}</td>
+    </tr>
+  </table>
+</div>
+
+<div ng-if="!visible" class="row">
+  <div class="col-xs-offset-5 col-md-offset-5 ol-lg-offset-5">
+    <h1 >Данные отсутствуют</h1>
+  </div>
+</div>

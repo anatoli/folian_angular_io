@@ -1,43 +1,42 @@
 <h2 class="sub-header">Список дилеров</h2>
 <div class="table-responsive">
-  <div ng-if="!noTableDataQ">
+  <div ng-if="visible">
     <table  class="table table-bordered table-striped table-condensed"
             ng-table="tableParams" show-filter="true">
-      <tr ng-repeat="row in questionsList track by row.id"
-          ng-class="{tableItemSelected: (row.id === gridSelection.id)}">
-        <td data-title="'Номер'" filter="{title: 'text'}" sortable="'title'">
-          {{row.num}}
+      <tr ng-repeat="row in dealers">
+        <!--<td data-title="'Имя'" filter="{title: 'text'}" sortable="'title'">-->
+          <!--{{row.NAME}}-->
+        <!--</td>-->
+        <td data-title="'ФИО'">
+          {{row.NAME}}
         </td>
-        <td data-title="'ФИО'" filter="{level:'number'}" sortable="'level'" >
-          {{row.level}}
+        <td data-title="'e-mail'">
+          {{row.EMAIL}}
         </td>
-        <td data-title="'e-mail'" class="center-block">
+        <td data-title="'Город'" >
+          {{row.CITY}}
+        </td>
+        <td data-title="'Телефон'" >
+          {{row.PHONE}}
+        </td>
+        <td data-title="'Доступ'" >
+          {{row.ACTIVE}}
+        </td>
+        <!--<td data-title="'Кол-во заказов'" class="center-block">-->
 
-        </td>
-        <td data-title="'Город'" class="center-block">
+        <!--</td>-->
+        <!--<td data-title="'Общая сумма'" class="center-block">-->
 
-        </td>
-        <td data-title="'Телефон'" class="center-block">
+        <!--</td>-->
+        <!--<td data-title="'Внесено денег'" class="center-block">-->
 
-        </td>
-        <td data-title="'Доступ'" class="center-block">
-
-        </td>
-        <td data-title="'Кол-во заказов'" class="center-block">
-
-        </td>
-        <td data-title="'Общая сумма'" class="center-block">
-
-        </td>
-        <td data-title="'Внесено денег'" class="center-block">
-
-        </td>
+        <!--</td>-->
 
       </tr>
     </table>
   </div>
 
-  <h2 ng-if="noTableDataQ"
+  <h2 ng-if="!visible"
       class="text-center">
     Список пуст
   </h2>

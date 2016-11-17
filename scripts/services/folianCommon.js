@@ -20,8 +20,18 @@ resources
       query : { method:'GET', params:{}, isArray:true}
     });
   }])
+  .factory('Dealers', ['$resource', function ($resource) {
+    return $resource('/api/Dealers',{
+      query : { method:'GET', params:{}, isArray:true}
+    });
+  }])
   .factory('Material', ['$resource', function ($resource) {
-    return $resource('/api/Material',{
+    return $resource('/api/MaterialPolotno',{
+      query : { method:'GET', params:{}, isArray:true}
+    });
+  }])
+  .factory('Acessories', ['$resource', function ($resource) {
+    return $resource('/api/MaterialAcessories',{
       query : { method:'GET', params:{}, isArray:true}
     });
   }])
