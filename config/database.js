@@ -2,8 +2,8 @@
 module.exports = {
     'connection': {
         'host': '127.0.0.1',
-        'user': '123456qwerty',
-        'password': '123456qwerty',
+        'user': '12345qwert',
+        'password': '12345qwert',
         'database': 'database1',
      },//'connection': {
     //     'host': '127.0.0.1',

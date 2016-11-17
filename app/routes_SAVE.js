@@ -145,8 +145,10 @@ module.exports = function(app, passport) {
   });
 
   app.post('/api/MaterialAcessories', function (req, res) {
-
-    connection.query('INSERT INTO materials SET name="'+req.name+'",vendor="'+req.vendor+'", type="'+req.type+'", ', function (err, rows) {
+console.log(req.body.name)
+console.log(req.body.vendor)
+console.log(req.body.type)
+    connection.query('INSERT INTO materials (NAME, VENDOR, TYPE) VALUES ("'+req.body.name+'","'+req.body.vendor+'", "'+req.body.type+'", ', function (err, rows) {
       if(!err) {
         console.log('note error')
         res.json({"code" : 200, "status" : "Success"});
