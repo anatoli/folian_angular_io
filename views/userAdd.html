@@ -1,38 +1,38 @@
 
 <h2 class="sub-header">Добавление пользователя</h2>
 
-<form method="POST" action="http://pro.folian.by/user_create" accept-charset="UTF-8"><input name="_token" type="hidden">
+<form>
 <div class="row">
   <div col-md-6>
 
     <div class="input-group">
       <span class="input-group-addon">ФИО</span>
-      <input type="text" name="name" class="form-control" placeholder="ФИО">
+      <input ng-model="user.name" type="text" name="name" class="form-control" placeholder="ФИО">
     </div>
 
     <div class="input-group">
       <span class="input-group-addon">Email</span>
-      <input type="text" name="email" class="form-control">
+      <input ng-model="user.email" type="text" name="email" class="form-control">
     </div>
 
     <div class="input-group">
       <span class="input-group-addon">Пароль</span>
-      <input type="password" name="password" class="form-control">
+      <input ng-model="user.password" type="password" name="password" class="form-control">
     </div>
 
     <div class="input-group">
       <span class="input-group-addon">Город</span>
-      <input type="text" name="city" class="form-control">
+      <input ng-model="user.city" type="text" name="city" class="form-control">
     </div>
 
     <div class="input-group">
       <span class="input-group-addon">Телефон</span>
-      <input type="text" name="phone" class="form-control">
+      <input ng-model="user.phone" type="text" name="phone" class="form-control">
     </div>
 
     <div class="input-group">
       <span class="input-group-addon">Роль</span>
-      <select class="form-control" name="role">
+      <select ng-model="user.role" class="form-control" name="role">
         <option value="dealer">Дилер</option>
         <option value="dispatcher">Диспетчер</option>
         <option value="admin">Администратор</option>
@@ -44,11 +44,11 @@
           Доступ предоставлен
         </span>
         <span class="input-group-addon">
-          <input type="checkbox" class="form-control" name="active">
+          <input ng-model="user.active" type="checkbox" class="form-control" name="active">
         </span>
     </div>
 
-    <button type="submit" class="btn btn-default">Добавить</button>
+    <button ng-click="userAdd()" class="btn btn-default">Добавить</button>
   </div>
 </div>
 </form>

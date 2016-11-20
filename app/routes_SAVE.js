@@ -109,6 +109,20 @@ module.exports = function(app, passport) {
       }
     })
   });
+
+  app.post('/api/User', function (req, res) {
+    var body= req.body;
+    connection.query('INSERT IGNORE INTO users(NAME, EMAIL, CITY) VALUES ("'+body.name+'","'+body.email+'","'+body.city+'") ', function (err, rows) {
+      if(!err) {
+        console.log('note error')
+        res.json({"code" : 200, "status" : "Success"});
+      }else{
+        res.json({"code" : 500, "status" : "Server Error" + err});
+        return;
+      }
+    })
+  });
+
   app.get('/api/Dealers', function (req, res) {
     connection.query('SELECT * FROM users WHERE ROLE LIKE "dealer" ', function (err, rows) {
       if(!err) {
@@ -144,39 +158,17 @@ module.exports = function(app, passport) {
     })
   });
 
-
-
   app.post('/api/MaterialAcessories', function (req, res) {
-    console.log("req.body.name")
     var body= req.body;
-    console.log(typeof body.name)
-    console.log(typeof body.types)
-    console.log(typeof body.vendor)
-    console.log(typeof body)
-console.log('INSERT IGNORE INTO materials(NAME) VALUES ('+body.name+', '+body.vendor+')');
-
-    // connection.query('INSERT HIGH_PRIORITY INTO materials( NAME, TYPE, vendor) VALUES ('+req.name+', '+req.type+','+req.vendor+') ', function (err, rows) {
-    connection.query('INSERT IGNORE INTO materials(NAME) VALUES ('+body.name+','+body.vendor+')', function (err, rows) {
+    connection.query('INSERT IGNORE INTO materials(NAME, TYPE, VENDOR) VALUES ("'+body.name+'","'+body.types+'","'+body.vendor+'") ', function (err, rows) {
       if(!err) {
         console.log('note error')
         res.json({"code" : 200, "status" : "Success"});
-        // res.send({"code" : 200, "status" : "Success"});
       }else{
-        res.json({"code" : 500, "status" : "Server Error"});
-        // res.send({"code" : 500, "status" : "Server Error"})
+        res.json({"code" : 500, "status" : "Server Error" + err});
         return;
       }
     })
-    // connection.query('SELECT * FROM materials WHERE TYPE LIKE "acessories"', function (err, rows) {
-    //   if(!err) {
-    //     res.json(rows);
-    //     res.end;
-    //   }else{
-    //     res.json({"code" : 500, "status" : "Server Error"});
-    //     res.send({"code" : 500, "status" : "Server Error"})
-    //     return;
-    //   }
-    // })
   });
 
   app.get('/api/login', function(req, res, next) {

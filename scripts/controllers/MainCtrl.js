@@ -1,10 +1,15 @@
 'use strict';
 
 angular.module('folianApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl',['$scope', '$location', '$rootScope', '$state', 'User',
+    'NgTableParams',
+    function ($scope, $location, $rootScope, $state, User, NgTableParams) {
+
+    $scope.userAdd = function(){
+      User.save($scope.user, function (data) {
+        console.log("Юзер создан")
+      })
+      }
+
+
+    }]);
