@@ -1,15 +1,17 @@
 <h2>Пользователи</h2>
 <div class="row">
-  <table ng-if="visible" ng-table="tableParams" class="table" show-filter="true">
-    <tr ng-repeat="user in users">
-      <td title="'ID'" filter="{id:'text'}" sortable="'id'">
-        {{user.ID}}</td>
-      <td title="'Name'" filter="{name:'text'}" sortable="'name'">
-        {{user.NAME}}</td>
-      <td title="'Age'" filter="{age:'number'}" sortable="'age'">
-        {{user.EMAIL}}</td>
-    </tr>
-  </table>
+  <div ng-if="visible">
+    <table  ng-table="tableParams" class="table table-bordered table-striped table-condensed" show-filter="true">
+      <tr ng-repeat="row in users">
+        <td data-title="'ID'" filter="{ID:'text'}" sortable="'ID'">
+          {{row.ID}}</td>
+        <td data-title="'ФИО'" filter="{NAME:'text'}" sortable="'NAME'">
+          {{row.NAME}}</td>
+        <td data-title="'Email'" filter="{EMAIL:'number'}" sortable="'EMAIL'">
+          {{row.EMAIL}}</td>
+      </tr>
+    </table>
+  </div>
 </div>
 
 <div ng-if="!visible" class="row">

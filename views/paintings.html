@@ -1,15 +1,20 @@
 <h2>Материалы-полотна</h2>
-<div class="row">
-  <table ng-if="visible" ng-table="tableParams" class="table" show-filter="true">
-    <tr ng-repeat="material in materials">
-      <td title="'ID'" filter="{id:'text'}" sortable="'id'">
-        {{material.NAME}}</td>
-      <td title="'Name'" filter="{name:'text'}" sortable="'name'">
-        {{material.PRICE}}</td>
-      <td title="'Age'" filter="{age:'number'}" sortable="'age'">
-        {{material.TYPE}}</td>
-    </tr>
-  </table>
+<div class="row table-responsive">
+  <div  ng-if="visible">
+    <table ng-table="tableParams" class="table table-striped table-bordered table-condensed">
+      <tr ng-repeat="row in materials">
+        <td data-title="'ID'">
+          {{row.NAME}}
+        </td>
+        <td data-title="'Наименование'" >
+          {{row.PRICE}}
+        </td>
+        <td date-title="'Тип материала'">
+          {{row.TYPE}}
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
 
 <div ng-if="!visible" class="row">
