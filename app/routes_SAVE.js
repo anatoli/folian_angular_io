@@ -24,7 +24,7 @@ module.exports = function(app, passport) {
   // =====================================
   // HOME PAGE (with login links) ========
   // =====================================
-  app.get('guarded-mountain-99826.herokuapp.com/', function(req, res) {    //todo здесь был "/"
+  app.get('/', function(req, res) {    //todo здесь был "/"
 
     res.render('profile.ejs'); // load the index.ejs file
     // res.redirect('/login');
