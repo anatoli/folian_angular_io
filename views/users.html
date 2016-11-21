@@ -3,12 +3,25 @@
   <div ng-if="visible">
     <table  ng-table="tableParams" class="table table-bordered table-striped table-condensed" show-filter="true">
       <tr ng-repeat="row in users">
-        <td data-title="'ID'" filter="{ID:'text'}" sortable="'ID'">
-          {{row.ID}}</td>
         <td data-title="'ФИО'" filter="{NAME:'text'}" sortable="'NAME'">
-          {{row.NAME}}</td>
+          {{row.NAME}}
+        </td>
         <td data-title="'Email'" filter="{EMAIL:'number'}" sortable="'EMAIL'">
-          {{row.EMAIL}}</td>
+          {{row.EMAIL}}
+        </td>
+        <td data-title="'Город'" filter="{CITY:'number'}" sortable="'CITY'">
+          {{row.CITY}}
+        </td>
+        <td data-title="'Телефон'" filter="{PHONE:'number'}" sortable="'PHONE'">
+          {{row.PHONE}}
+        </td>
+        <td data-title="'Роль'" filter="{ROLE:'number'}" sortable="'ROLE'">
+          {{row.ROLE}}
+        </td>
+        <td data-title="'Доступ'" filter="{ACTIVE:'number'}" sortable="'ACTIVE'">
+          {{row.ACTIVE}}
+        </td>
+
       </tr>
     </table>
   </div>

@@ -1,16 +1,22 @@
 <h2>Материалы-полотна</h2>
 <div class="row table-responsive">
   <div  ng-if="visible">
-    <table ng-table="tableParams" class="table table-striped table-bordered table-condensed">
+    <table ng-table="tableParams" class="table table-striped table-bordered table-condensed" show-filter="true">
       <tr ng-repeat="row in materials">
-        <td data-title="'ID'">
+        <td data-title="'Наименование'" filter="{NAME:'text'}">
           {{row.NAME}}
         </td>
-        <td data-title="'Наименование'" >
-          {{row.PRICE}}
+        <td data-title="'Стоимость'" filter="{PRICE:'text'}" >
+          {{(row.PRICE == null || row.PRICE==undefined)  ? 'нет оценки' : row.PRICE}}/{{(row.PRICE_MEAS == null || row.PRICE_MEAS==undefined)  ? "" : row.PRICE_MEAS}}
         </td>
-        <td date-title="'Тип материала'">
-          {{row.TYPE}}
+        <td data-title="'Производитель'" filter="{VENDOR:'text'}">
+          {{row.VENDOR}}
+        </td>
+        <td data-title="'Дата пополнения'" filter="{FILL_DATE:'text'}">
+          {{row.FILL_DATE | date : "dd.mm.yyyy"}}
+        </td>
+        <td data-title="'Наличие'" filter="{COUNT:'text'}">
+          <b>{{row.COUNT}}</b> {{row.COUNT_MEAS}}
         </td>
       </tr>
     </table>

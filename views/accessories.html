@@ -1,15 +1,24 @@
 
 <h2>Материалы - комплектующие</h2>
-<div class="row">
+<div class="row table-responsive">
   <div  ng-if="visible" >
-    <table ng-table="tableParams" class="table table-bordered table-striped table-condensed">
-      <tr ng-repeat="acessory in acessories">
-        <td date-title="'ID'" filter="{NAME:'text'}" sortable="'NAME'">
-          {{acessory.NAME}}</td>
-        <td date-title="'Наименование'" filter="{PRICE:'text'}" sortable="'PRICE'">
-          {{acessory.PRICE}}</td>
-        <td date-title="'Тип'" filter="{TYPE:'number'}" sortable="'TYPE'">
-          {{acessory.TYPE}}</td>
+    <table ng-table="tableParams" class="table table-bordered table-striped table-condensed" show-filter="true">
+      <tr ng-repeat="row in acessories">
+        <td data-title="'Наименование'" filter="{NAME:'text'}">
+          {{row.NAME}}
+        </td>
+        <td data-title="'Стоимость'" filter="{PRICE:'text'}" >
+          {{(row.PRICE == null || row.PRICE==undefined)  ? "нет оценки" : row.PRICE}}/{{(row.PRICE_MEAS == null || row.PRICE_MEAS==undefined)  ? "" : row.PRICE_MEAS}}
+        </td>
+        <td data-title="'Производитель'" filter="{VENDOR:'text'}">
+          {{row.VENDOR}}
+        </td>
+        <td data-title="'Дата пополнения'" filter="{FILL_DATE:'text'}">
+          {{row.FILL_DATE | date : "dd.mm.yyyy"}}
+        </td>
+        <td data-title="'Наличие'" filter="{COUNT:'text'}">
+          <b>{{row.COUNT}}</b> {{row.COUNT_MEAS}}
+        </td>
       </tr>
     </table>
   </div>
