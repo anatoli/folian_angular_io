@@ -36,9 +36,11 @@ app.use('/scripts',  express.static(__dirname + '/scripts'));
 // app.use('/styles',  express.static(__dirname + '/styles'));
 app.use('/styles',  express.static(__dirname + '/css'));
 app.use('/views',  express.static(__dirname + '/views'));
-app.use('/app',  express.static(__dirname + '/app'));
-app.use('/app',  express.static(__dirname + '/bower_components'));
-app.use('/app',  express.static(__dirname + '/views'));
+app.use('/',  express.static(__dirname + '/client'));
+app.use('/client',  express.static(__dirname + '/bower_components'));
+app.use('/client',  express.static(__dirname + '/views'));
+app.use('/client',  express.static(__dirname + '/scripts'));
+app.use('/client',  express.static(__dirname + '/css'));
 
 
 
