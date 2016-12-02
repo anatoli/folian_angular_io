@@ -1,6 +1,7 @@
-server/node_modules
+node_modules
 dist
 .tmp
 .sass-cache
-server/bower_components
+server/app/bower_components
+bower_components
 
